@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: v2
-        image: v2_v2
+        image: v2
         imagePullPolicy: Never
         resources:
           limits:
