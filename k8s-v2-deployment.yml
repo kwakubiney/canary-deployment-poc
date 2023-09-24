@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-v2
+spec:
+  selector:
+    matchLabels:
+      app: v2
+  template:
+    metadata:
+      labels:
+        app: v2
+    spec:
+      containers:
+      - name: v2
+        image: v2_v2
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

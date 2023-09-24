@@ -1,0 +1,7 @@
+services:
+  v2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8080"
