@@ -12,26 +12,11 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /v1
+        value: /
     backendRefs:
     - name: v1-service
       port: 80
----
-apiVersion: gateway.networking.k8s.io/v1beta1
-kind: HTTPRoute
-metadata:
-  name: v2
-spec:
-  parentRefs:
-  - name: gateway
-    sectionName: http
-  hostnames:
-  - "server.example.com"
-  rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /v2
-    backendRefs:
+      weight: 0
     - name: v2-service
       port: 80
+      weight: 100

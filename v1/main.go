@@ -6,10 +6,14 @@ import (
 )
 
 func hi(w http.ResponseWriter, req *http.Request) {
+	if req.URL.Path != "/" {
+		http.NotFound(w, req)
+		return
+	 }
 	fmt.Fprintf(w, "hi, I am v1\n")
 }
 
 func main() {
-	http.HandleFunc("/v1", hi)
+	http.HandleFunc("/", hi)
 	http.ListenAndServe(":8080", nil)
 }
