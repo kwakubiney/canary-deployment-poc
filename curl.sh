@@ -12,7 +12,7 @@ output_file="curl_output.txt" > "$output_file"
 for ((i=1; i<=100; i++)); do    
     REQUEST_URL="$BASE_URL"
     echo "server.example.com:$GW_PORT:$GW_IP" "$REQUEST_URL"
-    curl --resolve "server.example.com:$GW_PORT:$GW_IP" "$REQUEST_URL/"  >> "$output_file"
+    curl --silent --resolve "server.example.com:$GW_PORT:$GW_IP" "$REQUEST_URL/"  >> "$output_file"
 done
 
 echo "Finished sending 100 random requests."
