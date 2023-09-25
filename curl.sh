@@ -15,7 +15,7 @@ for ((i=1; i<=100; i++)); do
     curl --resolve "server.example.com:$GW_PORT:$GW_IP" "$REQUEST_URL/"  >> "$output_file"
 done
 
-echo "Finished sending 200 random requests."
+echo "Finished sending 100 random requests."
 
 count_v1=$(cat "$output_file" | grep hi | wc -l)
 count_v2=$(cat "$output_file" | grep hello | wc -l)

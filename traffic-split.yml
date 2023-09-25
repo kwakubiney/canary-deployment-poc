@@ -16,7 +16,7 @@ spec:
     backendRefs:
     - name: v1-service
       port: 80
-      weight: 0
+      weight: 100
     - name: v2-service
       port: 80
-      weight: 100
+      weight: 0
